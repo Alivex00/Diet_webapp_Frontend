@@ -1,14 +1,4 @@
-<div class="row mt-4">
-  <div class="col-md-6">
-    <div class="row" style="height: 450px;">
-      <div class="col-md-12 my-auto side-header">
-        <img src="/assets/img/user.png" class="mx-auto d-block">
-        <h1>Zarejestruj się</h1>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+<form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
       <div class="form-group required">
         <label>Nazwa Użytkownika</label>
         <input class="form-control" formControlName="UserName">
@@ -41,6 +31,4 @@
           <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">Zatwierdź</button>
         </div>
     </div>
-    </form>
-  </div>
-</div>
+</form>
