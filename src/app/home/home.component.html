@@ -1,5 +1,10 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar0brand text-white">JWT Auth System</a>
+  <a class="navbar-brand text-white">JWT Auth System</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/admin">Panel Dietetyka</a>
+    </li>
+  </ul>
   <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
 </nav>
 <div class="card m-5" style="width: 18rem" *ngIf="userDetails">
