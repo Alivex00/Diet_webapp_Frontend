@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AdminComponent } from './admin/admin.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { ProductComponent } from './product/product.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     LoginComponent,
     HomeComponent,
     AdminComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({

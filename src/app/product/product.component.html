@@ -1,0 +1,31 @@
+<div class="border container searchPadding">
+  <form action="">
+    <div class="form-group">
+      <label>Search Products</label>
+      <input type="text" class="form-control" placeholder="Search Products" [(ngModel)]="prodname" name="prodname">
+      <button class="btn btn-danger my-2 my-sm-0" (click)="findProduct()">Szukaj</button>
+    </div>
+  </form>
+  </div>
+  <br>
+
+  <div class= "topPadding container border " *ngIf = "prod">
+  
+    <div class="card bg-light mb-3">
+    <div class="card-body">
+
+        
+        <div class="col-md-6">
+          
+          <span class="badge badge-primary">{{prod.ENERC_KCAL}} Kcal</span>
+          <span class="badge badge-secondary">{{prod.PROCNT}} Białko</span>
+          <span class="badge badge-success">{{prod.FAT}} Tłuszcze</span>
+          <span class="badge badge-info">{{prod.CHOCDF}} Węglowodany</span>
+             
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

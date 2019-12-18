@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { element } from 'protractor';
+import { Http, Headers } from '@angular/http';
+import { Observable, Subject } from 'rxjs';
+import { map } from "rxjs/operators";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +13,10 @@ export class UserService {
 
   constructor(private fb:FormBuilder, private http:HttpClient) { }
   readonly BaseUrl = 'https://localhost:44306/api'
+  readonly ApiUrl = 'https://api.edamam.com/api/food-database/parser?ingr='
+  private id_key = '&app_id=e4df3e74&'
+  private app_key = 'app_key=030962516776e0f5fda5804dc7e99ccd'
+  private prodname = 'apple'
   formModel = this.fb.group({
     UserName : ['', Validators.required],
     Email : ['', Validators.email],
@@ -56,4 +64,10 @@ export class UserService {
     });
     return isMatch;
   }
+  getProducts(): Observable<any>{
+    return this.http.get(this.ApiUrl+ this.prodname + this.id_key + this.app_key);
+  }
+  updateProduct(prodname:string){
+		this.prodname = prodname;
+   }
 }
